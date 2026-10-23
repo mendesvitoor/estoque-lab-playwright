@@ -4,22 +4,22 @@ Automação end-to-end do EstoqueLab com Playwright e TypeScript.
 
 ## Requisitos
 
-- Node.js 20 ou superior e npm
+- Node.js 20.19 ou superior e npm
 - A aplicação disponível em uma URL acessível
 
 ## Configuração local
 
-~~~~powershell
+```powershell
 npm ci
 Copy-Item .env.example .env
 npx playwright install chromium
-~~~~
+```
 
 O arquivo .env.example aponta para a aplicação publicada. Altere BASE_URL no arquivo .env para testar outra instância.
 
-~~~~dotenv
+```dotenv
 BASE_URL=https://estoquelab.netlify.app
-~~~~
+```
 
 Execute os testes com npm test. Sem BASE_URL, eles são ignorados. O cenário de login usa as credenciais fictícias de demonstração exibidas na página (admin / 123456).
 
@@ -34,12 +34,12 @@ Execute os testes com npm test. Sem BASE_URL, eles são ignorados. O cenário de
 
 ## Organização
 
-~~~~text
+```text
 tests/
 ├── e2e/          # Cenários agrupados por funcionalidade
 ├── fixtures/     # Fixtures compartilhadas
 └── pages/        # Page Objects e seletores da interface
-~~~~
+```
 
 Cada teste recebe um contexto de navegador isolado. Prefira seletores acessíveis (getByRole, getByLabel e getByText), evite esperas fixas e aguarde condições com expect.
 
@@ -49,4 +49,4 @@ O workflow .github/workflows/quality.yml verifica lint, formatação, tipos e te
 
 ## GitHub
 
-Repositório público sugerido: meendesvitor/estoque-lab-playwright.
+Repositório público sugerido: mendesvitoor/estoque-lab-playwright.
